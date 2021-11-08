@@ -3,7 +3,7 @@
 
 #include "select.hpp"
 
-class Select_Contains{
+class Select_Contains: public Select{
 
 	private:
 
