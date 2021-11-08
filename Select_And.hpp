@@ -3,7 +3,7 @@
 
 #include "select.hpp"
 
-class Select_And{
+class Select_And: public Select{
 
 	private:
 
