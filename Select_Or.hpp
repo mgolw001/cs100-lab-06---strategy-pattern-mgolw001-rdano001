@@ -3,7 +3,7 @@
 
 #include "select.hpp"
 
-class Select_Or{
+class Select_Or: public Select{
 
 	private:
 
