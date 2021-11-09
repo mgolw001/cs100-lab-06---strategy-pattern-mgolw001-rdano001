@@ -41,10 +41,18 @@ int Spreadsheet::get_column_by_name(const std::string& name) const
     return -1;
 }
 
-void print_selection(std::ostream& out)const
+void Spreadsheet::print_selection(std::ostream& out)const
 {
 	if(select == nullptr){
-		//print whole thing
+
+			for(int r= 0;r < data.size();r++){
+				for(int c = 0; c< column_names.size() ;c++){
+
+					std::cout<<cell_data(r,c)<<" ";
+				}
+				std::cout<<std::endl;
+			}
+		
 	}
 	else{
 		//iterate through spreadsheet by row calling the select funtion
