@@ -23,7 +23,14 @@ bool Select_Contains::select(const string& s){
 	for( int i = 0; i < l; i++){
 		if(s[i]==word[correct_counter]){
 			correct_counter++;
+			if(correct_counter==word.length(){
+				return true;
+			}
 		}
+		else{
+			correct_counter=0;
+		}
+		
 	}
 	if(correct_counter==word.length(){
 		return true;
