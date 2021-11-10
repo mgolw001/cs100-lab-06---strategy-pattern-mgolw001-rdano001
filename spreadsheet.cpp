@@ -55,8 +55,15 @@ void Spreadsheet::print_selection(std::ostream& out)const
 		
 	}
 	else{
-		//iterate through spreadsheet by row calling the select funtion
-	}
+		for(int r =0;r<data.size();r++){
+			if(select->select(this, r)){
+				for(int c=0;c<column_names.size();c++){
+					std::cout<<cell_data(r,c)<<" ";
+				}
+				std::cout<<std::endl;
+			}
+		}
+	}	
 		
 
 
