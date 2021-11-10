@@ -2,17 +2,17 @@
 #include <string> 
 using namespace std;
 
-Select_Contains::Select_Contains(Spreadsheet* s, string cname, string w){
-	sheet = s;
-	column_name=cname;
+Select_Contains::Select_Contains(Spreadsheet* s, string c, string w) : Select_Column(s,c){
 	word = w;
-	
-}
-Select_Contains::~Select_Contains{
-	delete sheet;
 }
 
-bool Select_Contains::select(const string& s){
+
+
+
+
+
+
+bool Select_Contains::select(const string& s)const{
 	//this function works by itterating through the data in the cell string  by character and comparing it at each step to the first letter in word
 	//if the first letter matches one in the cell string it moves onto the next character and keeps comparing
 	//once the loop has reached the end of the passed in word it sees if the correct_counter is equal to the length of the word it returns true
@@ -23,7 +23,7 @@ bool Select_Contains::select(const string& s){
 	for( int i = 0; i < l; i++){
 		if(s[i]==word[correct_counter]){
 			correct_counter++;
-			if(correct_counter==word.length(){
+			if(correct_counter==word.length()){
 				return true;
 			}
 		}
@@ -32,7 +32,7 @@ bool Select_Contains::select(const string& s){
 		}
 		
 	}
-	if(correct_counter==word.length(){
+	if(correct_counter==word.length()){
 		return true;
 	}
 	return false;

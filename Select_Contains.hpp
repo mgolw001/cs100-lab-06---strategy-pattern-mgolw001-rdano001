@@ -11,11 +11,9 @@ using namespace std;
 class Select_Contains: public Select_Column{
 
 	private:
-		Spreadsheet* sheet;
-		string column_name;
 		string word; 
 	public:
-		Select_Contains(Spreadsheet*, string, string);
+		Select_Contains(Spreadsheet* sheet, string c, string w);
 		~Select_Contains();
 		bool select(const std::string& s)const;
 };
