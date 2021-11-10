@@ -1,6 +1,6 @@
 #include "spreadsheet.hpp"
 #include "select.hpp"
-
+#include "Select_Contains.hpp"
 #include <iostream>
 
 int main(int argc, char* argv[])
