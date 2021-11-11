@@ -3,14 +3,23 @@
 
 #include "select.hpp"
 
-class Select_And: public Select{
+class Select_AND: public Select{
 
 	private:
-
+		Select* selection1;
+		Select* selection2;
 	public:
+		Select_And(Select* s, select t){//not only needs one because it only takes in one at a time;
+			selection1 = s;
+			selection2 = t;
+		}
+		~Select_Not(){
 
-		~Select_And()
-		bool select(const Spreadsheet* sheet, int row);
+			delete selection1;
+			delete selection2;
+		}
+
+		bool select(const Spreadsheet* sheet, int row)const;
 };
 
 #endif
