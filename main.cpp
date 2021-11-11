@@ -2,6 +2,8 @@
 #include "select.hpp"
 #include "Select_Contains.hpp"
 #include "Select_Not.hpp"
+#include "Select_And.hpp"
+#include "Select_Or.hpp"
 #include <iostream>
 
 int main(int argc, char* argv[])
