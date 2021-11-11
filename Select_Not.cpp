@@ -2,6 +2,6 @@
 
 bool Select_Not::select(const Spreadsheet* sheet, int row) const{
 
-	return !(selection.select(sheet,row));
+	return !(selection->select(sheet,row));
 
 }

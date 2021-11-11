@@ -12,9 +12,11 @@ class Select_Not: public Select{
 			selection = s;
 		}
 		~Select_Not(){
+
 			delete selection;
 		}
-		bool select(const Spreadsheet* sheet, const std::string name)const;
+
+		bool select(const Spreadsheet* sheet, int row)const;
 };
 
 #endif
