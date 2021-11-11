@@ -3,7 +3,7 @@
 
 #include "select.hpp"
 
-class Select_Not: public Select_Columni{
+class Select_Not: public Select{
 
 	private:
 		Select* selection;
@@ -14,7 +14,7 @@ class Select_Not: public Select_Columni{
 		~Select_Not(){
 			delete selection;
 		}
-		bool select(const std::string& s)const;
+		bool select(const Spreadsheet* sheet, const std::string name)const;
 };
 
 #endif
