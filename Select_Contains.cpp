@@ -7,11 +7,6 @@ Select_Contains::Select_Contains(Spreadsheet* s, string c, string w) : Select_Co
 }
 
 
-
-
-
-
-
 bool Select_Contains::select(const string& s)const{
 	//this function works by itterating through the data in the cell string  by character and comparing it at each step to the first letter in word
 	//if the first letter matches one in the cell string it moves onto the next character and keeps comparing

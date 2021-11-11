@@ -14,7 +14,7 @@ class Select_Contains: public Select_Column{
 		string word; 
 	public:
 		Select_Contains(Spreadsheet* sheet, string c, string w);
-		~Select_Contains();
+		~Select_Contains(){}
 		bool select(const std::string& s)const;
 };
 
