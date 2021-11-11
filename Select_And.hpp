@@ -3,7 +3,7 @@
 
 #include "select.hpp"
 
-class Select_AND: public Select{
+class Select_And: public Select{
 
 	private:
 		Select* selection1;
@@ -13,7 +13,7 @@ class Select_AND: public Select{
 			selection1 = s;
 			selection2 = t;
 		}
-		~Select_Not(){
+		~Select_And(){
 
 			delete selection1;
 			delete selection2;
