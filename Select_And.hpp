@@ -9,7 +9,7 @@ class Select_And: public Select{
 		Select* selection1;
 		Select* selection2;
 	public:
-		Select_And(Select* s, select t){//not only needs one because it only takes in one at a time;
+		Select_And(Select* s, Select* t){//not only needs one because it only takes in one at a time;
 			selection1 = s;
 			selection2 = t;
 		}
