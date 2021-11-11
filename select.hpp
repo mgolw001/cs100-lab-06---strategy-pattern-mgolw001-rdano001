@@ -2,6 +2,9 @@
 #define __SELECT_HPP__
 
 #include <cstring>
+#include "spreadsheet.hpp"
+
+using namespace std;
 
 class Select
 {
@@ -24,7 +27,7 @@ class Select_Column: public Select
 protected:
     int column;
 public:
-    Select_Column(const Spreadsheet* sheet, const std::string& name)
+    Select_Column(const Spreadsheet* sheet, const string& name)
     {
         column = sheet->get_column_by_name(name);
     }
@@ -35,7 +38,7 @@ public:
     }
 
     // Derived classes can instead implement this simpler interface.
-    virtual bool select(const std::string& s) const = 0;
+    virtual bool select(const string& s) const = 0;
 };
 
 #endif //__SELECT_HPP__

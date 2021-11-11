@@ -2,15 +2,20 @@
 #define SELECT_CONTAINS_HPP
 
 #include "select.hpp"
+#include "spreadsheet.hpp"
+#include <string>
 
-class Select_Contains: public Select{
+using namespace std;
+
+
+class Select_Contains: public Select_Column{
 
 	private:
-
+		string word; 
 	public:
-
-		~Select_Contains()
-		bool select(const Spreadsheet* sheet, int row);
+		Select_Contains(Spreadsheet* sheet, string c, string w);
+		~Select_Contains(){}
+		bool select(const std::string& s)const;
 };
 
 #endif
