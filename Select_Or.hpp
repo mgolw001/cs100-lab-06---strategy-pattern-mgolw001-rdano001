@@ -13,7 +13,7 @@ class Select_Or: public Select{
 			selection1 = s;
 			selection2 = t;
 		}
-		~Select_Not(){
+		~Select_Or(){
 
 			delete selection1;
 			delete selection2;
