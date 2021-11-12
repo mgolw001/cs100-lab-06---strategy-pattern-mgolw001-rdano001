@@ -5,7 +5,7 @@
 #include "select.hpp"
 #include "spreadsheet.hpp"
 #include "Select_Contains.hpp"
-
+#include "Select_Not.hpp"
 
 
 TEST(NotTest,Exists) {
