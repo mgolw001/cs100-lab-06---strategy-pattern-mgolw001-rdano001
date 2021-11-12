@@ -21,7 +21,7 @@ TEST(ContainsTest, Exists){
 	
 	Select_Contains* x = new Select_Contains(&sheet, "Last", "Genius");
 	sheet.set_selection(x);
-	EXPECT_EQ(x->select(&sheet, 8), true);
+	EXPECT_EQ(x->select("Genius"), true);
 }
 
 TEST(ContainsTest, NotExist){
@@ -39,7 +39,7 @@ TEST(ContainsTest, NotExist){
 
         Select_Contains* x = new Select_Contains(&sheet, "Last", "Danover");
         sheet.set_selection(x);
-        EXPECT_EQ(x->select(&sheet, 8), false;
+        EXPECT_EQ(x->select("Danover" ), false);
 }
 
 TEST(ContainsTest, EmptyString){
@@ -57,7 +57,7 @@ TEST(ContainsTest, EmptyString){
 
         Select_Contains* x = new Select_Contains(&sheet, "Last", "");
         sheet.set_selection(x);
-        EXPECT_EQ(x->select(&sheet, 8), true);
+        EXPECT_EQ(x->select(""), true);
 }
 
 TEST(ContainsTest, PartialWord){
@@ -75,6 +75,6 @@ TEST(ContainsTest, PartialWord){
 
         Select_Contains* x = new Select_Contains(&sheet, "Last", "Gen");
         sheet.set_selection(x);
-        EXPECT_EQ(x->select(&sheet, 8), true);
+        EXPECT_EQ(x->select("Gen"), true);
 }
 #endif
