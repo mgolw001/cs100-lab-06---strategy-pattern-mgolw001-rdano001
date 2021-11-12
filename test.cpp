@@ -1,7 +1,6 @@
 #include "spreadsheet.hpp"
 
 #include "gtest/gtest.h"
-#include "spreadsheet.hpp"
 #include "Select_Or_Test.hpp"
 #include "Select_And_Test.hpp"
 #include "Select_Contains_Test.hpp"
