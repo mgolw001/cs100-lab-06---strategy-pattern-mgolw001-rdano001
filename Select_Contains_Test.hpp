@@ -4,6 +4,7 @@
 #include "gtest/gtest.h"
 #include "select.hpp"
 #include "spreadsheet.hpp"
+#include "Select_Contains.hpp"
 
 TEST(ContainsTest, Exists){
 	Spreadsheet sheet;
