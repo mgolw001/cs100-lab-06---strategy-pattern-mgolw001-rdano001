@@ -39,7 +39,7 @@ TEST(ContainsTest, NotExist){
 
         Select_Contains* x = new Select_Contains(&sheet, "Last", "Danover");
         sheet.set_selection(x);
-        EXPECT_EQ(x->select("Danover" ), false);
+        EXPECT_EQ(x->select("Genius"), false);
 }
 
 TEST(ContainsTest, EmptyString){

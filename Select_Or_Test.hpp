@@ -58,7 +58,7 @@ TEST(OrTest,OneTrueOneFalse) {
 
    Select_Or* x = new Select_Or(new Select_Contains(&sheet, "Last", "Andrews"), new Select_Contains(&sheet, "Age", "21"));
    sheet.set_selection(x);
-   EXPECT_FALSE(x->select(&sheet, 0));
+   EXPECT_TRUE(x->select(&sheet, 0));
 }
 
 TEST(OrTest,EmptyString) {
