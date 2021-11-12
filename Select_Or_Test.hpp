@@ -7,6 +7,8 @@
 #include "spreadsheet.hpp"
 #include "Select_Contains.hpp"
 #include "Select_Or.hpp"
+#include "Select_And.hpp"
+#include "Select_Not.hpp"
 
 TEST(OrTest,BothTrue) {
     Spreadsheet sheet;
@@ -97,4 +99,42 @@ TEST(OrTest,PartialWord) {
    EXPECT_TRUE(x->select(&sheet, 2));
 }
 
-#endif                                                       
+TEST(OrTest,NotCombo) {
+    Spreadsheet sheet;
+    sheet.set_column_names({"First","Last","Age","Major"});
+    sheet.add_row({"Amanda","Andrews","22","business"});
+    sheet.add_row({"Brian","Becker","21","computer science"});
+    sheet.add_row({"Carol","Conners","21","computer science"});
+    sheet.add_row({"Joe","Jackson","21","mathematics"});
+    sheet.add_row({"Sarah","Summers","21","computer science"});
+    sheet.add_row({"Diane","Dole","20","computer engineering"});
+    sheet.add_row({"David","Dole","22","electrical engineering"});
+    sheet.add_row({"Dominick","Dole","22","communications"});
+    sheet.add_row({"George","Genius","9","astrophysics"});
+
+   Select_Or* x = new Select_Or(new Select_Not(new Select_Contains(&sheet, "Last", "Dole")), new Select_Contains(&sheet, "Age", "20"));
+   sheet.set_selection(x);
+   EXPECT_TRUE(x->select(&sheet, 5));
+}
+
+TEST(OrTest,AndOrCombo) {
+    Spreadsheet sheet;
+    sheet.set_column_names({"First","Last","Age","Major"});
+    sheet.add_row({"Amanda","Andrews","22","business"});
+    sheet.add_row({"Brian","Becker","21","computer science"});
+    sheet.add_row({"Carol","Conners","21","computer science"});
+    sheet.add_row({"Joe","Jackson","21","mathematics"});
+    sheet.add_row({"Sarah","Summers","21","computer science"});
+    sheet.add_row({"Diane","Dole","20","computer engineering"});
+    sheet.add_row({"David","Dole","22","electrical engineering"});
+    sheet.add_row({"Dominick","Dole","22","communications"});
+    sheet.add_row({"George","Genius","9","astrophysics"});
+
+   Select_And* x = new Select_And(new Select_Contains(&sheet, "Last", "Golwalla"), new Select_Contains(&sheet, "Age", "20"));
+   Select_Or* y = new Select_Or(new Select_Not(new Select_Contains(&sheet,"Last", "Danover")), new Select_Contains(&sheet, "Age", "19"));
+   Select_Or* z = new Select_Or(x,y);
+   sheet.set_selection(z);
+   EXPECT_TRUE(z->select(&sheet, 5));
+}
+
+#endif                                                      
