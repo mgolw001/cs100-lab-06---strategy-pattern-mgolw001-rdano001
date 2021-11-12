@@ -6,7 +6,7 @@
 #include "select.hpp"
 #include "spreadsheet.hpp"
 #include "Select_Contains.hpp"
-//#include "Select_And.hpp"
+#include "Select_And.hpp"
 //#include <iostream>
 //#include "Select_And.cpp"
 //#include "spreadsheet.cpp"
