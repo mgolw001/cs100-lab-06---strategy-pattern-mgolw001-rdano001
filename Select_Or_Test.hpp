@@ -2,11 +2,11 @@
 #define SELECT_OR_TEST_HPP
 
 
-
+#include "gtest/gtest.h"
 #include "select.hpp"
 #include "spreadsheet.hpp"
 #include "Select_Contains.hpp"
-
+#include "Select_Or.hpp"
 
 TEST(OrTest,BothTrue) {
     Spreadsheet sheet;
